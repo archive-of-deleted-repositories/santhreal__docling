@@ -169008,7 +169008,7 @@
               "b": 520.89,
               "coord_origin": "TOPLEFT"
             },
-            "confidence": 0.95,
+            "confidence": 0.951,
             "cells": [
               {
                 "index": 75,
@@ -174117,7 +174117,7 @@
               "b": 520.89,
               "coord_origin": "TOPLEFT"
             },
-            "confidence": 0.95,
+            "confidence": 0.951,
             "cells": [
               {
                 "index": 75,
@@ -179133,7 +179133,7 @@
               "b": 520.89,
               "coord_origin": "TOPLEFT"
             },
-            "confidence": 0.95,
+            "confidence": 0.951,
             "cells": [
               {
                 "index": 75,
@@ -995109,10 +995109,10 @@
               "l": 168.39,
               "t": 181.97,
               "r": 447.35,
-              "b": 634.01,
+              "b": 634.0,
               "coord_origin": "TOPLEFT"
             },
-            "confidence": 0.761,
+            "confidence": 0.762,
             "cells": [
               {
                 "index": 8,
@@ -996118,10 +996118,10 @@
               "l": 168.39,
               "t": 181.97,
               "r": 447.35,
-              "b": 634.01,
+              "b": 634.0,
               "coord_origin": "TOPLEFT"
             },
-            "confidence": 0.761,
+            "confidence": 0.762,
             "cells": [
               {
                 "index": 8,
@@ -997032,10 +997032,10 @@
               "l": 168.39,
               "t": 181.97,
               "r": 447.35,
-              "b": 634.01,
+              "b": 634.0,
               "coord_origin": "TOPLEFT"
             },
-            "confidence": 0.761,
+            "confidence": 0.762,
             "cells": [
               {
                 "index": 8,

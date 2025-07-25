@@ -780009,7 +780009,7 @@
               "b": 708.63,
               "coord_origin": "TOPLEFT"
             },
-            "confidence": 0.858,
+            "confidence": 0.859,
             "cells": [
               {
                 "index": 72,
@@ -784153,7 +784153,7 @@
               "b": 708.63,
               "coord_origin": "TOPLEFT"
             },
-            "confidence": 0.858,
+            "confidence": 0.859,
             "cells": [
               {
                 "index": 72,
@@ -788279,7 +788279,7 @@
               "b": 708.63,
               "coord_origin": "TOPLEFT"
             },
-            "confidence": 0.858,
+            "confidence": 0.859,
             "cells": [
               {
                 "index": 72,
@@ -969540,7 +969540,7 @@
             "bbox": {
               "l": 88.33,
               "t": 92.89,
-              "r": 263.7,
+              "r": 263.71,
               "b": 220.57,
               "coord_origin": "TOPLEFT"
             },
@@ -973633,7 +973633,7 @@
             "bbox": {
               "l": 88.33,
               "t": 92.89,
-              "r": 263.7,
+              "r": 263.71,
               "b": 220.57,
               "coord_origin": "TOPLEFT"
             },
@@ -977697,7 +977697,7 @@
             "bbox": {
               "l": 88.33,
               "t": 92.89,
-              "r": 263.7,
+              "r": 263.71,
               "b": 220.57,
               "coord_origin": "TOPLEFT"
             },
@@ -2076160,7 +2076160,7 @@
               "l": 52.96,
               "t": 84.74,
               "r": 556.93,
-              "b": 442.14,
+              "b": 442.13,
               "coord_origin": "TOPLEFT"
             },
             "confidence": 0.835,
@@ -2078983,7 +2078983,7 @@
               "l": 52.96,
               "t": 84.74,
               "r": 556.93,
-              "b": 442.14,
+              "b": 442.13,
               "coord_origin": "TOPLEFT"
             },
             "confidence": 0.835,
@@ -2081789,7 +2081789,7 @@
               "l": 52.96,
               "t": 84.74,
               "r": 556.93,
-              "b": 442.14,
+              "b": 442.13,
               "coord_origin": "TOPLEFT"
             },
             "confidence": 0.835,
