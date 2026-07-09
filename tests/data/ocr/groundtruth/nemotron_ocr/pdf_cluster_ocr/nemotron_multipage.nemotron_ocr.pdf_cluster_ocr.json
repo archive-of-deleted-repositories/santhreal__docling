@@ -1,0 +1,164 @@
+{
+  "schema_name": "DoclingDocument",
+  "version": "1.10.0",
+  "name": "nemotron_multipage",
+  "origin": {
+    "mimetype": "application/pdf",
+    "binary_hash": 11018861755137062248,
+    "filename": "nemotron_multipage.pdf"
+  },
+  "furniture": {
+    "self_ref": "#/furniture",
+    "children": [],
+    "content_layer": "furniture",
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "body": {
+    "self_ref": "#/body",
+    "children": [
+      {
+        "$ref": "#/texts/0"
+      },
+      {
+        "$ref": "#/texts/1"
+      }
+    ],
+    "content_layer": "body",
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "groups": [],
+  "texts": [
+    {
+      "self_ref": "#/texts/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 72.24,
+            "t": 766.28,
+            "r": 504.29,
+            "b": 693.4,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            94
+          ]
+        },
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 90.44,
+            "t": 178.3,
+            "r": 522.11,
+            "b": 42.2,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            95,
+            199
+          ]
+        }
+      ],
+      "orig": "Docling bundles PDF document conversion to USON and Markdown in an easy self contained package Sackags Moraeae USON and oertcoonn in an easy self contained of aocument Ceeeeaenn to Cecunn Menaues FUE",
+      "text": "Docling bundles PDF document conversion to USON and Markdown in an easy self contained package Sackags Moraeae USON and oertcoonn in an easy self contained of aocument Ceeeeaenn to Cecunn Menaues FUE"
+    },
+    {
+      "self_ref": "#/texts/1",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 693.83,
+            "t": 526.43,
+            "r": 766.04,
+            "b": 87.26,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            94
+          ]
+        },
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 73.74,
+            "t": 504.2,
+            "r": 123.04,
+            "b": 73.96,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            95,
+            180
+          ]
+        },
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 132.43,
+            "t": 143.46,
+            "r": 150.3,
+            "b": 84.38,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            181,
+            188
+          ]
+        }
+      ],
+      "orig": "package USON and Markdown in an easy self contained Docling bundles PDF document conversion to Docling bundles PDF document conversion to SON and Markdown in an easy self contained Backage",
+      "text": "package USON and Markdown in an easy self contained Docling bundles PDF document conversion to Docling bundles PDF document conversion to SON and Markdown in an easy self contained Backage"
+    }
+  ],
+  "pictures": [],
+  "tables": [],
+  "key_value_items": [],
+  "form_items": [],
+  "pages": {
+    "1": {
+      "size": {
+        "width": 595.2,
+        "height": 841.92
+      },
+      "page_no": 1
+    },
+    "2": {
+      "size": {
+        "width": 595.2,
+        "height": 841.92
+      },
+      "page_no": 2
+    },
+    "3": {
+      "size": {
+        "width": 841.92,
+        "height": 595.2
+      },
+      "page_no": 3
+    },
+    "4": {
+      "size": {
+        "width": 841.92,
+        "height": 595.2
+      },
+      "page_no": 4
+    }
+  }
+}
