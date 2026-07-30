@@ -56,8 +56,9 @@ import pytest
 from docling_core.types.doc import DocItemLabel, DoclingDocument, GroupLabel, TextItem
 from docling_core.types.doc.document import Script
 
+from docling.backend.xml.jats_backend import JatsDocumentBackend
 from docling.datamodel.base_models import DocumentStream, InputFormat
-from docling.datamodel.document import ConversionResult
+from docling.datamodel.document import ConversionResult, InputDocument
 from docling.document_converter import DocumentConverter
 
 from .test_data_gen_flag import GEN_TEST_DATA
@@ -574,3 +575,32 @@ def test_e2e_jats_conversions_stream():
 
 def test_e2e_jats_conversions_no_stream():
     test_e2e_jats_conversions(use_stream=False)
+
+
+def test_jats_table_rowspan_header():
+    """Regression test: JATS table with header cell having rowspan > 1
+    should not cause IndexError or table skipping during parsing.
+    """
+    xml_content = b"""<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
+<article>
+  <body>
+    <table-wrap id="t1">
+      <table>
+        <tr><th rowspan="2">Header</th></tr>
+      </table>
+    </table-wrap>
+  </body>
+</article>"""
+    in_doc = InputDocument(
+        path_or_stream=BytesIO(xml_content),
+        format=InputFormat.XML_JATS,
+        backend=JatsDocumentBackend,
+        filename="test_jats_rowspan.xml",
+    )
+    backend = JatsDocumentBackend(in_doc=in_doc, path_or_stream=BytesIO(xml_content))
+    doc = backend.convert()
+    assert len(doc.tables) == 1
+    assert doc.tables[0].data.num_rows == 1
+    assert doc.tables[0].data.num_cols == 1
+    assert doc.tables[0].data.table_cells[0].text == "Header"

@@ -1413,3 +1413,24 @@ Text with pre-existing sentinel{_BR_SENTINEL}character should be cleaned.
     assert "sentinelcharacter" in markdown or "sentinel character" in markdown, (
         "Text should still be present after sentinel cleanup"
     )
+
+
+def test_html_table_rowspan_header_index_error():
+    """Regression test: HTML table with header cell having rowspan > 1
+    should not cause IndexError during table parsing.
+    """
+    html_content = (
+        b"<html><body><table><tr><th rowspan='2'>Header</th></tr></table></body></html>"
+    )
+    in_doc = InputDocument(
+        path_or_stream=BytesIO(html_content),
+        format=InputFormat.HTML,
+        backend=HTMLDocumentBackend,
+        filename="test_rowspan.html",
+    )
+    backend = HTMLDocumentBackend(in_doc=in_doc, path_or_stream=BytesIO(html_content))
+    doc = backend.convert()
+    assert len(doc.tables) == 1
+    assert doc.tables[0].data.num_rows == 1
+    assert doc.tables[0].data.num_cols == 1
+    assert doc.tables[0].data.table_cells[0].text == "Header"

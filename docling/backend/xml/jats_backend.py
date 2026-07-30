@@ -844,6 +844,8 @@ class JatsDocumentBackend(DeclarativeDocumentBackend):
         # Find the number of rows and columns (taking into account spans)
         num_rows = 0
         num_cols = 0
+        start_row_span = 0
+        row_idx = -1
         for row in element("tr"):
             col_count = 0
             is_row_header = True
@@ -859,8 +861,11 @@ class JatsDocumentBackend(DeclarativeDocumentBackend):
                     is_row_header = False
             num_cols = max(num_cols, col_count)
             if not is_row_header:
-                num_rows += 1
-
+                row_idx += 1
+                start_row_span = 0
+            else:
+                start_row_span += 1
+            num_rows = max(num_rows, row_idx + start_row_span + 1)
         _log.debug(f"The table has {num_rows} rows and {num_cols} cols.")
 
         grid: list = [[None for _ in range(num_cols)] for _ in range(num_rows)]
@@ -914,12 +919,13 @@ class JatsDocumentBackend(DeclarativeDocumentBackend):
                     row_span -= 1
                 while (
                     col_idx < num_cols
+                    and 0 <= row_idx + start_row_span < len(grid)
                     and grid[row_idx + start_row_span][col_idx] is not None
                 ):
                     col_idx += 1
                 for r in range(start_row_span, start_row_span + row_span):
                     for c in range(col_span):
-                        if row_idx + r < num_rows and col_idx + c < num_cols:
+                        if 0 <= row_idx + r < num_rows and 0 <= col_idx + c < num_cols:
                             grid[row_idx + r][col_idx + c] = text
 
                 table_cell = TableCell(

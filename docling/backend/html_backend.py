@@ -1522,12 +1522,13 @@ class HTMLDocumentBackend(DeclarativeDocumentBackend):
                     row_span -= 1
                 while (
                     col_idx < num_cols
+                    and 0 <= row_idx + start_row_span < len(grid)
                     and grid[row_idx + start_row_span][col_idx] is not None
                 ):
                     col_idx += 1
                 for r in range(start_row_span, start_row_span + row_span):
                     for c in range(col_span):
-                        if row_idx + r < num_rows and col_idx + c < num_cols:
+                        if 0 <= row_idx + r < num_rows and 0 <= col_idx + c < num_cols:
                             grid[row_idx + r][col_idx + c] = text
 
                 if rich_table_cell:
@@ -2568,6 +2569,8 @@ class HTMLDocumentBackend(DeclarativeDocumentBackend):
         # Find the number of rows and columns (taking into account spans)
         num_rows: int = 0
         num_cols: int = 0
+        start_row_span = 0
+        row_idx = -1
         for row in tag("tr", recursive=False):
             col_count = 0
             is_row_header = True
@@ -2583,7 +2586,11 @@ class HTMLDocumentBackend(DeclarativeDocumentBackend):
                     is_row_header = False
             num_cols = max(num_cols, col_count)
             if not is_row_header:
-                num_rows += 1
+                row_idx += 1
+                start_row_span = 0
+            else:
+                start_row_span += 1
+            num_rows = max(num_rows, row_idx + start_row_span + 1)
         return num_rows, num_cols
 
     def _handle_block(self, tag: Tag, doc: DoclingDocument) -> list[RefItem]:  # noqa: C901
